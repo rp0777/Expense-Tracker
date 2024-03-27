@@ -1,6 +1,6 @@
+import CategoryPieChart from "./CategoryPieChart/CategoryPieChart";
 import styles from "./Dashboard.module.css";
 import Expenses from "./Expenses/Expenses";
-import PieChart from "./PieChart/PieChart";
 import WalletBalance from "./WalletBalance/WalletBalance";
 
 const Dashboard = () => {
@@ -11,7 +11,7 @@ const Dashboard = () => {
         <Expenses />
       </div>
 
-      <PieChart />
+      <CategoryPieChart />
     </div>
   );
 };

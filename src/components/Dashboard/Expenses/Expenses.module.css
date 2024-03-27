@@ -4,7 +4,8 @@
   padding: 2rem;
   border-radius: 15px;
   background-color: #9b9b9b;
-  color: black;
+  color: #fff;
+  font-weight: 400;
   font-size: 1.5rem;
   font-family: var(--ubuntu-font-family);
 
@@ -16,6 +17,7 @@
 }
 
 .totalExpensesAmount {
+  font-weight: 700;
   color: darkgreen;
 }
 

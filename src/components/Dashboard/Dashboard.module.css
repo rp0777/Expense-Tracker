@@ -1,12 +1,12 @@
 .dashboard {
   height: 35%;
   width: 100%;
-  padding: 1rem 3%;
+  padding: 1rem 6%;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2%;
   color: #ffffff;
   background-color: #626262;
 }
@@ -16,6 +16,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1.5rem;
-  width: 65%;
+  gap: 10%;
+  width: 75%;
 }

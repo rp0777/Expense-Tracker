@@ -22,21 +22,31 @@ const expenses = [
   },
 ];
 
-let foodCount = 0,
-  entertainmentCount = 0,
-  traveLCount = 0;
+let foodExpense = 0,
+  entertainmentExpense = 0,
+  travelExpense = 0;
 expenses.map((expense) => {
-  if (expense.category === "food") foodCount++;
-  if (expense.category === "entertainment") entertainmentCount++;
-  if (expense.category === "travel") traveLCount++;
+  if (expense.category === "food") foodExpense += parseInt(expense.price);
+  if (expense.category === "entertainment")
+    entertainmentExpense += parseInt(expense.price);
+  if (expense.category === "travel") travelExpense += parseInt(expense.price);
   totalExpenses += parseInt(expense.price);
   balance -= parseInt(expense.price);
 });
 
-const categoryData = {
-  food: foodCount,
-  entertainment: entertainmentCount,
-  travel: traveLCount,
-};
+const categoryData = [
+  {
+    name: "entertainment",
+    value: entertainmentExpense,
+  },
+  {
+    name: "food",
+    value: foodExpense,
+  },
+  {
+    name: "travel",
+    value: travelExpense,
+  },
+];
 
 export { balance, expenses, categoryData, totalExpenses };

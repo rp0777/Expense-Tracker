@@ -4,10 +4,10 @@ import styles from "./Expenses.module.css";
 const Expenses = () => {
   return (
     <div className={styles.expenses}>
-      <h3>
+      <p>
         Expenses: &nbsp;
         <span className={styles.totalExpensesAmount}>₹{totalExpenses}</span>
-      </h3>
+      </p>
 
       <button className={styles.addExpense}>+ Add Expense</button>
     </div>

@@ -4,10 +4,10 @@ import styles from "./WalletBalance.module.css";
 const WalletBalance = () => {
   return (
     <div className={styles.walletBalance}>
-      <h3>
+      <p>
         Wallet Balance: &nbsp;
         <span className={styles.balanceAmount}>₹{balance}</span>
-      </h3>
+      </p>
 
       <button className={styles.addIncome}>+ Add Income</button>
     </div>
