@@ -1,0 +1,8 @@
+.walletBalance {
+  width: 22rem;
+  height: 100%;
+  padding: 2rem;
+  border-radius: 15px;
+  background-color: #9b9b9b;
+  font-family: var(--ubuntu-font-family);
+}

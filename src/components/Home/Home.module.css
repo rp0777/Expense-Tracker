@@ -1,7 +1,7 @@
 .home {
   width: 100vw;
   height: 100vh;
-  padding: 1rem 2rem 0 2rem;
+  padding: 1rem 4rem 0 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,7 +15,7 @@
   color: #ffffff;
   position: absolute;
   top: 1rem;
-  left: 2rem;
+  left: 4rem;
 }
 
 .transactionsAndExpenses {
