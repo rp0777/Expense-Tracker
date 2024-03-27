@@ -1,11 +1,11 @@
 import styles from "./ExpenseCard.module.css";
 import { CiCircleRemove } from "react-icons/ci";
 import { MdModeEdit } from "react-icons/md";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
-ExpenseCard.propTypes = {
-  expense: PropTypes.node,
-};
+// ExpenseCard.propTypes = {
+//   expense: PropTypes.node,
+// };
 
 const ExpenseCard = ({ expense }) => {
   const dateFormat = (date) => {

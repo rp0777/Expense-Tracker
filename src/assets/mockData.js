@@ -48,17 +48,19 @@ expenses.map((expense) => {
 
 const categoryData = [
   {
-    name: "entertainment",
-    value: entertainmentExpense,
-  },
-  {
     name: "food",
     value: foodExpense,
+  },
+  {
+    name: "entertainment",
+    value: entertainmentExpense,
   },
   {
     name: "travel",
     value: travelExpense,
   },
 ];
+
+categoryData.sort((a, b) => b.value - a.value);
 
 export { balance, expenses, categoryData, totalExpenses };
