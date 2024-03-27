@@ -1,7 +1,7 @@
 .dashboard {
   height: 35%;
   width: 100%;
-  padding: 1rem 5rem;
+  padding: 1rem 3%;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
@@ -16,5 +16,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1.5rem;
   width: 65%;
 }
