@@ -20,6 +20,18 @@ const expenses = [
     category: "travel",
     date: new Date("2024-03-22"),
   },
+  {
+    title: "Train",
+    price: "50",
+    category: "travel",
+    date: new Date("2024-03-22"),
+  },
+  {
+    title: "Train",
+    price: "50",
+    category: "travel",
+    date: new Date("2024-03-22"),
+  },
 ];
 
 let foodExpense = 0,

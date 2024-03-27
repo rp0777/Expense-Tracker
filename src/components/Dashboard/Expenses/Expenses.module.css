@@ -6,7 +6,7 @@
   background-color: #9b9b9b;
   color: #fff;
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 22px;
   font-family: var(--ubuntu-font-family);
 
   display: flex;
@@ -18,11 +18,11 @@
 
 .totalExpensesAmount {
   font-weight: 700;
-  color: darkgreen;
+  color: #ff3e3e;
 }
 
 .addExpense {
-  width: 50%;
+  width: 150px;
   padding: 0.5rem 1rem;
   font-size: 1rem;
   color: white;

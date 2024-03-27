@@ -3,9 +3,9 @@ import styles from "./TopExpenses.module.css";
 const TopExpenses = () => {
   return (
     <div className={styles.topExpenses}>
-      <h2 className={styles.heading}>
+      <p className={styles.heading}>
         <i>Top Expenses</i>
-      </h2>
+      </p>
 
       <div className={styles.categories}>Expenses Categories Bar Chart</div>
     </div>
