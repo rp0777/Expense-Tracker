@@ -1,6 +1,8 @@
 import styles from "./ExpenseCard.module.css";
 import { CiCircleRemove } from "react-icons/ci";
 import { MdModeEdit } from "react-icons/md";
+import ExpenseModal from "../../Dashboard/ExpenseModal/ExpenseModal";
+import { useState } from "react";
 // import PropTypes from "prop-types";
 
 // ExpenseCard.propTypes = {
@@ -8,6 +10,12 @@ import { MdModeEdit } from "react-icons/md";
 // };
 
 const ExpenseCard = ({ expense }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
   const dateFormat = (date) => {
     const day = date.getDate();
     const month = date.getMonth();
@@ -59,10 +67,20 @@ const ExpenseCard = ({ expense }) => {
         <button className={styles.deleteBtn}>
           <CiCircleRemove size={25} />
         </button>
-        <button className={styles.editBtn}>
+
+        <button className={styles.editBtn} onClick={openModal}>
           <MdModeEdit size={30} />
         </button>
       </div>
+
+      {isOpen && (
+        <ExpenseModal
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          type={"Edit"}
+          id={expense.id}
+        />
+      )}
     </div>
   );
 };

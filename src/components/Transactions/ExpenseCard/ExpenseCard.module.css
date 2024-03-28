@@ -65,6 +65,7 @@
   color: white;
   background-color: #ff3e3e;
   filter: drop-shadow(0 4px 2px #9b9b9b);
+  cursor: pointer;
 }
 
 .editBtn {
@@ -75,4 +76,5 @@
   color: white;
   background-color: #f4bb4a;
   filter: drop-shadow(0 4px 2px #9b9b9b);
+  cursor: pointer;
 }

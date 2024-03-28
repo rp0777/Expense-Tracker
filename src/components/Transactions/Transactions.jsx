@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { expenses } from "../../assets/mockData"; // Importing the mock data
+import { expenses } from "../../assets/mockData";
 import ExpenseCard from "./ExpenseCard/ExpenseCard";
 import styles from "./Transactions.module.css";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
@@ -36,8 +36,8 @@ const Transactions = () => {
       </p>
 
       <div className={styles.cardsFrame}>
-        {currentExpenses.map((expense, index) => (
-          <ExpenseCard key={index} expense={expense} />
+        {currentExpenses.map((expense) => (
+          <ExpenseCard key={expense.id} expense={expense} />
         ))}
 
         <div className={styles.pagination}>

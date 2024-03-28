@@ -3,42 +3,49 @@ let totalExpenses = 0;
 
 const expenses = [
   {
+    id: 0,
     title: "Samosa",
     price: "150",
     category: "food",
     date: new Date("2024-03-20"),
   },
   {
+    id: 1,
     title: "Samosa",
     price: "150",
     category: "food",
     date: new Date("2024-03-20"),
   },
   {
+    id: 2,
     title: "Samosa",
     price: "150",
     category: "food",
     date: new Date("2024-03-20"),
   },
   {
+    id: 3,
     title: "Movie",
     price: "300",
     category: "entertainment",
     date: new Date("2024-03-21"),
   },
   {
+    id: 4,
     title: "Train",
     price: "50",
     category: "travel",
     date: new Date("2024-03-22"),
   },
   {
+    id: 5,
     title: "Train",
     price: "50",
     category: "travel",
     date: new Date("2024-03-22"),
   },
   {
+    id: 6,
     title: "Train",
     price: "50",
     category: "travel",
