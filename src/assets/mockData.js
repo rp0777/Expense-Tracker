@@ -9,6 +9,18 @@ const expenses = [
     date: new Date("2024-03-20"),
   },
   {
+    title: "Samosa",
+    price: "150",
+    category: "food",
+    date: new Date("2024-03-20"),
+  },
+  {
+    title: "Samosa",
+    price: "150",
+    category: "food",
+    date: new Date("2024-03-20"),
+  },
+  {
     title: "Movie",
     price: "300",
     category: "entertainment",
@@ -48,15 +60,15 @@ expenses.map((expense) => {
 
 const categoryData = [
   {
-    name: "food",
+    name: "Food",
     value: foodExpense,
   },
   {
-    name: "entertainment",
+    name: "Entertainment",
     value: entertainmentExpense,
   },
   {
-    name: "travel",
+    name: "Travel",
     value: travelExpense,
   },
 ];

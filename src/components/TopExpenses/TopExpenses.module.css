@@ -16,4 +16,6 @@
   height: 95%;
   border-radius: 10px;
   background-color: #fff;
+  font-size: 12px;
+  font-family: var(--ubuntu-font-family);
 }
