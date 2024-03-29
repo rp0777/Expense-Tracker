@@ -1,9 +1,13 @@
 import { useState } from "react";
 import styles from "./WalletBalance.module.css";
-import { balance } from "../../../assets/mockData";
 import Modal from "react-modal";
 
-const WalletBalance = () => {
+const WalletBalance = ({
+  currentBalance,
+  mainBalance,
+  setMainBalance,
+  setCurrentBalance,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [newBalance, setNewBalance] = useState("");
 
@@ -21,7 +25,8 @@ const WalletBalance = () => {
   };
 
   const handleAddBalance = () => {
-    console.log("New balance:", newBalance);
+    setCurrentBalance(currentBalance + parseInt(newBalance));
+    setMainBalance(mainBalance + parseInt(newBalance));
     closeModal();
   };
 
@@ -29,7 +34,7 @@ const WalletBalance = () => {
     <div className={styles.walletBalance}>
       <p>
         Wallet Balance: &nbsp;
-        <span className={styles.balanceAmount}>₹{balance}</span>
+        <span className={styles.balanceAmount}>₹{currentBalance}</span>
       </p>
 
       <button className={styles.addIncome} onClick={openModal}>

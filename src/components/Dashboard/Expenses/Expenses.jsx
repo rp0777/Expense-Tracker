@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { expenses, totalExpenses } from "../../../assets/mockData";
 import styles from "./Expenses.module.css";
-import ExpenseModal from "../ExpenseModal/ExpenseModal";
+import ExpenseModal from "../../ExpenseModal/ExpenseModal";
 
-const Expenses = () => {
+const Expenses = ({ expenses, setExpenses, totalExpenses }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => {
@@ -26,6 +25,8 @@ const Expenses = () => {
           setIsOpen={setIsOpen}
           type={"Add"}
           id={expenses.length}
+          expenses={expenses}
+          setExpenses={setExpenses}
         />
       )}
     </div>

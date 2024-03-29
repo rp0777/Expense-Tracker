@@ -58,3 +58,10 @@
   font-size: 20px;
   font-family: var(--ubuntu-font-family);
 }
+
+.noExpenses {
+  color: black;
+  font-weight: 600;
+  font-size: 20px;
+  font-family: var(--ubuntu-font-family);
+}

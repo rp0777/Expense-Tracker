@@ -1,10 +1,10 @@
 import { Cell, Pie, PieChart } from "recharts";
 import styles from "./CategoryPieChart.module.css";
-import { categoryData } from "../../../assets/mockData";
+import { Fragment } from "react";
 
 const COLORS = ["#ff9304", "#a000ff", "#fde006"];
-
 const RADIAN = Math.PI / 180;
+
 const renderCustomizedLabel = ({
   cx,
   cy,
@@ -30,37 +30,45 @@ const renderCustomizedLabel = ({
   );
 };
 
-const CategoryPieChart = () => {
+const CategoryPieChart = ({ categoryData }) => {
   return (
     <div className={styles.categoryPieChart}>
-      <PieChart width={200} height={200}>
-        <Pie
-          data={categoryData}
-          cx={100}
-          cy={100}
-          labelLine={false}
-          label={renderCustomizedLabel}
-          outerRadius={90}
-          fill="#8884d8"
-          dataKey="value"
-        >
-          {categoryData.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-          ))}
-        </Pie>
-      </PieChart>
+      {categoryData.length !== 0 ? (
+        <Fragment>
+          <PieChart width={200} height={200}>
+            <Pie
+              data={categoryData}
+              cx={100}
+              cy={100}
+              labelLine={false}
+              label={renderCustomizedLabel}
+              outerRadius={90}
+              fill="#8884d8"
+              dataKey="value"
+            >
+              {categoryData.map((entry, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={COLORS[index % COLORS.length]}
+                />
+              ))}
+            </Pie>
+          </PieChart>
 
-      <div className={styles.labelInfo}>
-        <div className={styles.labels}>
-          <div className={styles.foodLine}></div> Food
-        </div>
-        <div className={styles.labels}>
-          <span className={styles.entertainmentLine}></span> Entertainment
-        </div>
-        <div className={styles.labels}>
-          <span className={styles.travelLine}></span> Travel
-        </div>
-      </div>
+          <div className={styles.labelInfo}>
+            {categoryData.map((entry, index) => (
+              <div key={index} className={styles.labels}>
+                <div className={`${entry.name}Line`}></div>
+                {entry.name}
+              </div>
+            ))}
+          </div>
+        </Fragment>
+      ) : (
+        <p className={styles.noPiechart}>
+          Add Expenses to see <br></br>A Category Pie Chart
+        </p>
+      )}
     </div>
   );
 };

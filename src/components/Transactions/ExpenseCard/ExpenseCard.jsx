@@ -1,15 +1,16 @@
 import styles from "./ExpenseCard.module.css";
 import { CiCircleRemove } from "react-icons/ci";
 import { MdModeEdit } from "react-icons/md";
-import ExpenseModal from "../../Dashboard/ExpenseModal/ExpenseModal";
 import { useState } from "react";
-// import PropTypes from "prop-types";
+import ExpenseModal from "../../ExpenseModal/ExpenseModal";
 
-// ExpenseCard.propTypes = {
-//   expense: PropTypes.node,
-// };
-
-const ExpenseCard = ({ expense }) => {
+const ExpenseCard = ({
+  expenseKey,
+  expense,
+  expenses,
+  setExpenses,
+  currentBalance,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => {
@@ -45,6 +46,21 @@ const ExpenseCard = ({ expense }) => {
     travel: "/suitcase_light.png",
   };
 
+  const handleDeleteExpense = () => {
+    let updatedExpenses = expenses.filter((item) => item.id !== expense.id);
+
+    updatedExpenses = updatedExpenses.map((item, index) => {
+      return {
+        ...item,
+        id: index,
+      };
+    });
+    console.log("updatedExpenses");
+    console.log(updatedExpenses);
+
+    setExpenses(updatedExpenses);
+  };
+
   return (
     <div className={styles.expenseCard}>
       <div className={styles.iconAndTitle}>
@@ -64,7 +80,7 @@ const ExpenseCard = ({ expense }) => {
       <div className={styles.priceAndUpdate}>
         <p className={styles.price}>₹{expense.price}</p>
 
-        <button className={styles.deleteBtn}>
+        <button className={styles.deleteBtn} onClick={handleDeleteExpense}>
           <CiCircleRemove size={25} />
         </button>
 
@@ -79,6 +95,8 @@ const ExpenseCard = ({ expense }) => {
           setIsOpen={setIsOpen}
           type={"Edit"}
           id={expense.id}
+          expenses={expenses}
+          setExpenses={setExpenses}
         />
       )}
     </div>

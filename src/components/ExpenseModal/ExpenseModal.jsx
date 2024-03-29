@@ -1,15 +1,21 @@
 import { useState } from "react";
 import Modal from "react-modal";
 import styles from "./ExpenseModal.module.css";
-import { expenses } from "../../../assets/mockData";
 
-const ExpenseModal = ({ isOpen, setIsOpen, type, id }) => {
+const ExpenseModal = ({
+  isOpen,
+  setIsOpen,
+  type,
+  id,
+  expenses,
+  setExpenses,
+}) => {
   let expense = {};
   if (id === expenses.length) {
     expense = {
       id: id,
       title: "",
-      price: "",
+      price: 0,
       category: "",
       date: null,
     };
@@ -18,10 +24,10 @@ const ExpenseModal = ({ isOpen, setIsOpen, type, id }) => {
   }
 
   const [formData, setFormData] = useState({
-    title: expense.title,
-    price: expense.price,
-    category: expense.category,
-    date: expense.date ? expense.date.toISOString().split("T")[0] : null,
+    title: expense.title || "",
+    price: expense.price || 0,
+    category: expense.category || "",
+    date: expense.date ? expense.date.toISOString().split("T")[0] : "",
   });
 
   const closeModal = () => {
@@ -36,16 +42,31 @@ const ExpenseModal = ({ isOpen, setIsOpen, type, id }) => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
+    if (type === "Edit") {
+      const updatedExpense = {
+        ...expense,
+        ...formData,
+        date: new Date(formData.date),
+      };
 
-    expenses[id] = {
-      ...expense,
-      ...formData,
-      date: new Date(formData.date),
-    };
+      const updatedExpenses = expenses.map((item) =>
+        item.id === updatedExpense.id ? updatedExpense : item
+      );
 
-    console.log(expenses[id]);
+      setExpenses(updatedExpenses);
+    } else {
+      const newExpense = {
+        ...formData,
+        date: new Date(formData.date),
+        id: id,
+      };
+
+      const updatedExpenses = [...expenses, newExpense];
+
+      setExpenses(updatedExpenses);
+    }
+
     closeModal();
   };
 
@@ -59,7 +80,7 @@ const ExpenseModal = ({ isOpen, setIsOpen, type, id }) => {
       >
         <p className={styles.heading}>{`${type} Expenses`}</p>
 
-        <form onSubmit={handleSubmit} className={styles.expenseForm}>
+        <div className={styles.expenseForm}>
           <div className={styles.inputGroups}>
             <input
               className={styles.inputBar}
@@ -106,13 +127,13 @@ const ExpenseModal = ({ isOpen, setIsOpen, type, id }) => {
           <div className={styles.inputGroups}>
             <button
               className={styles.addOrEditBtn}
-              onClick={closeModal}
+              onClick={handleSubmit}
             >{`${type} Expense`}</button>
             <button className={styles.cancelBtn} onClick={closeModal}>
               Cancel
             </button>
           </div>
-        </form>
+        </div>
       </Modal>
     </div>
   );

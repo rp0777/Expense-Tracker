@@ -22,20 +22,27 @@
   font-family: var(--ubuntu-font-family);
 }
 
-.foodLine {
+#FoodLine {
   width: 20px;
   height: 5px;
-  background-color: #a000ff;
+  background-color: #a000ff !important;
 }
 
-.entertainmentLine {
+.EntertainmentLine {
   width: 20px;
   height: 5px;
   background-color: #ff9304;
 }
 
-.travelLine {
+.TravelLine {
   width: 20px;
   height: 5px;
   background-color: #fde006;
+}
+
+.noPiechart {
+  color: black;
+  font-weight: 600;
+  font-size: 20px;
+  font-family: var(--ubuntu-font-family);
 }
